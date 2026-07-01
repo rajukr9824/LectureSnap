@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>LectureSnap</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>📚 LectureSnap</h1>
+        <p id="status">Loading...</p>
+      </header>
+
+      <section class="stats">
+        <span>📸 Captured: <strong id="totalScreenshots">0</strong></span>
+      </section>
+
+      <section id="gallery" class="gallery">
+        <!-- popup.js inserts screenshots here -->
+      </section>
+
+      <div id="emptyState" class="empty">
+        <h3>No Screenshots Yet</h3>
+        <p>Open a YouTube video and click the floating 📸 button.</p>
+      </div>
+
+      <footer>
+        <div class="footer-actions">
+          <button id="generatePdfBtn" disabled>📄 Generate PDF</button>
+          <button id="deleteAllBtn" disabled>🗑 Delete All</button>
+        </div>
+      </footer>
+    </div>
+
+    <script src="../libs/Sortable.min.js"></script>
+    <script src="../libs/jspdf.umd.min.js"></script>
+    <script src="popup.js"></script>
+  </body>
+</html>

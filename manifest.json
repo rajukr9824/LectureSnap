@@ -1,0 +1,28 @@
+{
+  "manifest_version": 3,
+  "name": "LectureSnap",
+  "description": "Capture YouTube lecture screenshots and generate PDF notes.",
+  "version": "2.0.0",
+  "permissions": ["activeTab", "storage", "tabs"],
+  "host_permissions": ["https://www.youtube.com/*"],
+  "background": {
+    "service_worker": "background/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_title": "LectureSnap"
+  },
+  "icons": {
+    "16": "assets/icon16.png",
+    "32": "assets/icon32.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["content/content.js"]
+    }
+  ]
+}
